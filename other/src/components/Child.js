@@ -1,12 +1,9 @@
 import React, { useContext } from 'react';
 
-import { ChildContext } from './ChildContext';
-
-const Child = React.memo(() => {
-  const data = useContext(ChildContext);
+const Child = React.memo(({data}) => {
   console.log('child');
   console.log({ data });
-  if (Object.keys(data.data).length) {
+  if (Object.keys(data).length) {
     return (
       <div>
         <h1>Child</h1>
